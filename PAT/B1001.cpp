@@ -1,14 +1,16 @@
 #include <cstdio>
+
 int main()
 {
-int test_num;
-long long A,B,C;
-scanf("%d",&test_num);
-for(int i=1;i<=test_num;i++)
-{
-scanf("%lld %lld %lld",&A,&B,&C);
-if(A+B>C) printf("Case #%d:true\n",i);
-else printf("Case #%d:false\n",i);
-}
-return 0;
+	int value,step_num=0;
+	scanf("%d",&value);
+	if(value<0||value>1000) return -1;
+	while(value!=1)
+	{
+		if(value%2==0) value =value/2;
+		else value=(3*value+1)/2;
+		step_num++;
+	}
+	printf("%d",step_num);
+	return 0;
 }
